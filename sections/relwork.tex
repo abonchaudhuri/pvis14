@@ -1,0 +1,20 @@
+\section{Related Work}
+\label{sec:relwork}
+%%
+\paragraph{Distribution-based Techniques:} The use of distributions in data analysis and visualization is ever-growing.  Scientific simulations often produce outcomes with uncertainty, making a distribution-based approach the most suitable for post-processing~\cite{Hixel11}. Sometimes the data itself come in the form of distributions. For example, multi-run simulations generate ensemble data which produce distribution of the outcomes from individual runs. To analyze data of this type, various algorithms that use distribution queries have been developed.  Examples include fuzzy isosurface computation from uncertain data~\cite{Hixel11}, and analysis of uncertain vector fields~\cite{uncertain3d11}. Even for conventional data, Johnson and Huang have proposed a distribution-based query to identify regions having a certain type of distribution~\cite{johnson09}. Similarly, Gosink et al. have shown that distributions of sub-regions of varying sizes are useful for feature extraction and segmentation~\cite{qdv11}. Block level distributions have also been used in spatio-temporal data analysis~\cite{transgraph11}. ProbVis~\cite{probvis12} is another distribution query engine. However, all these methods access the raw data to compute and display distributions whereas we aim at answering queries without having to access the raw data. Hence, our method can extend any of these query-driven techniques to large data when raw data access is not recommended.
+
+Distributions of scalar values and their attributes play a critical role in designing transfer function for volume rendering~\cite{semiautomatic98, localhistogram06} and predicting isosurface statistics~\cite{carrhist06}. Distributions are also critical in information theory based visualization since local and global distributions are needed to compute a suite of information theoretic metrics~\cite{Xu10}.
+
+\paragraph{Efficient Storage of Distributions:} Exact query processing on large databases became infeasible especially for certain applications such as online analytical processing (OLAP), giving way to fast and approximate query return based on pre-computed distributions~\cite{Buccafurri02}. In another approach, histograms have been treated as
+signals and various basis transforms such as wavelet~\cite{WaveletHist98} and SVD~\cite{SVD97} have been used to compress them. In visualization community, a recent work has proposed a statistical method of approximating histograms by Gaussian Mixture kernels to reduce the storage overhead~\cite{GMM12}. Another recent work has converted local distributions to sparse representations to reduce the overhead of computing probabilistic mipmaps from gigapixel images~\cite{Hadwiger12}. Efficient storage and retrieval of histograms is studied in other areas such as computer vision~\cite{CHOG2012} as well. 
+%Visualization~\cite{Kao02, Luo03} of pointwise histograms is usually performed using the data. 
+
+\paragraph{Similarity-based Methods:} The presence of self-similarity in various types of data has been  used for feature detection, encoding and other purposes. Shechtman and Irani~\cite{selfsimilarity07} have utilized self-similarity within an image and across multiple sequences in a video frame to detect visual entities. Jacquin~\cite{Jacquin92}, 
+%based on the theoretical insight provided by Barnsley et al.~\cite{Barnsley88}, 
+introduced a self-similarity based coding technique, known as fractal coding, for images. In fractal coding, the image to be encoded is partitioned into spatial blocks called \emph{range blocks} ($R_k$). Another smaller set of partitions, called \emph{domain blocks}, of the same image is created to serve as representative templates. The range block set is mapped to the domain block set in such a way that the range blocks, and hence the data can be reconstructed only from a set of iterative functions. 
+
+In this paper, we observe the great extent of similarity present across distributions coming from the same data. and develop a similarity-base matching framework for representing histograms in scientific data sets. 
+
+
+
+
